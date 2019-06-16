@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Spina Farms Pumpkin Patch
+        link(href="/public/stylesheets/style.scss" rel="stylesheet")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css")
+        link(rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="")
+    body
+
+        include header.pug
+
+        main
+
+            h1 #{page.title}
+            img.cover(src=''+strapi+page.picture.url+'')
+            p.desc #{page.paragraph}
+
+            a(href="/parties/packet") Download our party information packet
+
+            <iframe id="schedulista-widget-00" src="https://www.schedulista.com/schedule/spinafarmspumpkinpatch?mode=widget" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="900px"></iframe><script id="schedulista-widget-script-00" type="text/javascript" src="https://www.schedulista.com/schedule/spinafarmspumpkinpatch/widget.js"></script>
+            
+            
+
+            
+
+        include footer.pug
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+         
+        
+        
+        script.
+            
+
+            var convertMD = (el) =>{
+                var converter = new showdown.Converter(),
+                text      = el.innerHTML
+                html      = converter.makeHtml(text);
+                el.innerHTML = html;
+            }
+            
+            convertMD(document.querySelector(".desc"));
+            
+            

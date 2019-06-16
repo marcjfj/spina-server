@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Spina Farms Pumpkin Patch
+        link(href="/public/stylesheets/style.scss" rel="stylesheet")
+    body
+
+        include header.pug
+
+        main
+
+            h1 #{page.title}
+            img.cover(src=''+strapi+page.picture.url+'')
+            p.desc #{page.paragraph}
+            //- button.reserve-party Reserve Now!
+            a(href="/schools/packet") Download our field trip information packet
+
+            
+
+        include footer.pug
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+         
+        
+        
+        script.
+            
+
+            var convertMD = (el) =>{
+                var converter = new showdown.Converter(),
+                text      = el.innerHTML
+                html      = converter.makeHtml(text);
+                el.innerHTML = html;
+            }
+            
+            convertMD(document.querySelector(".desc"));
+            
+            

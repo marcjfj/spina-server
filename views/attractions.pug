@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Spina Farms Pumpkin Patch
+        link(href="/public/stylesheets/style.scss" rel="stylesheet")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css")
+        link(rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="")
+    body
+
+        include header.pug
+
+        main
+            h1 #{page.title}
+            p #{page.paragraph}
+
+            for attr in attractions
+                .attr-box
+                    h2 #{attr.title}
+                    img(src=""+strapi+attr.picture.url+"", alt="")
+                    p #{attr.description}
+            
+
+        include footer.pug
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+        script.
+            //- var swiper = new Swiper('.swiper-container', {
+            //- spaceBetween: 50,
+            //- centeredSlides: true,
+            //- //- parallax: true,
+            //- speed: 800,
+            //- autoplay: {
+            //-     delay: 2500,
+            //-     disableOnInteraction: false,
+            //- },
+            //- pagination: {
+            //-     el: '.swiper-pagination',
+            //-     clickable: true,
+            //- },
+            //- navigation: {
+            //-     nextEl: '.swiper-button-next',
+            //-     prevEl: '.swiper-button-prev',
+            //- },
+            //- });
+
+            var convertMD = (el) =>{
+                var converter = new showdown.Converter(),
+                text      = el.innerHTML
+                html      = converter.makeHtml(text);
+                el.innerHTML = html;
+            }
+            var attrBox = document.querySelectorAll(".attr-box");
+            attrBox.forEach(element => {
+                convertMD(element.querySelector("p"));
+            });
+            
+
+            //- var mymap = L.map('map').setView([37.201060, -121.736440], 11);
+
+            //- L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            //-     attribution: '',
+            //-     maxZoom: 18,
+            //-     id: 'mapbox.light',
+            //-     accessToken: 'pk.eyJ1IjoibWFyY2pmaiIsImEiOiJjandwc3NxZHAwdnJkNDlta3R3czBqNWF5In0.ovwj4cjXmJCb9-VTIMEUFQ'
+            //- }).addTo(mymap);
+            //- var greenIcon = L.icon({
+            //-     iconUrl: '/images/marker.svg',
+
+            //-     iconSize:     [38, 95], // size of the icon
+            //-     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            //-     shadowAnchor: [4, 62],  // the same for the shadow
+            //-     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            //- });
+            //- var marker = L.marker([37.201060, -121.736440], {icon: greenIcon}).addTo(mymap);
