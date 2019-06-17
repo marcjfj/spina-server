@@ -19,7 +19,7 @@ h1{
     font-size: 1.5em;
     width: calc(100% - 20px);
     max-width: 900px;
-    border-bottom: 2px solid #595E55;
+    // border-bottom: 2px solid #595E55;
     margin: 10px auto;
     padding: 10px;
 }
@@ -30,8 +30,10 @@ a{
 }
 body{
     margin: 0px;
-    background: rgb(239, 240, 234);
+    background: #eff0ea;
+    background-image: url( '/images/noise.png');
     padding: 0px;
+    box-shadow: inset 0px 0px 50px 0px rgba(89, 94, 85, 0.418);
 }
 .menu{
     position: fixed;
@@ -42,7 +44,9 @@ body{
     width: 66%;
     max-width: 900px;
     display: flex;
-    background: #595E55;
+    background: rgb(89,94,85);
+    background-image: linear-gradient(128deg, rgba(89,94,85,1) 0%, rgba(52,56,49,1) 100%);
+    background-image: url( '/images/noise2.png');
     color: #FFF;
     z-index: 10000;
     flex-direction: column;
@@ -67,13 +71,13 @@ body{
         padding: 15px;
         margin: 2px 0px;
         margin-bottom: 0px;
-        color: #FFF;
+        color: rgb(225, 226, 217);
         text-decoration: none;
         font-size: 1.2em;
-        background: rgba(255, 255, 255, 0.048);
+        // background: rgba(255, 255, 255, 0.048);
         text-align: left;
         // border: 2px solid rgba(0, 0, 0, 0.075);
-        border-left: 5px solid rgba(0, 0, 0, 0.185);
+        // border-left: 5px solid rgba(0, 0, 0, 0.185);
     }
     .close-button{
         position: absolute;
@@ -113,97 +117,32 @@ header{
     background: #595E55;
     color: #EEE;
 }
-.login-container{
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.322);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 12000;
-}
-/* Change the white to any color ;) */
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-}
 
-.login{
-    position: relative;
-    width: calc(100% - 20px);
-    max-width: 500px;
-    top: 50%;
-    background: rgb(239, 240, 234);
-    padding: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.329), 0px 1px 15px 0px rgba(0, 0, 0, 0.185);
 
-    .login-close{
-        svg{
-            height: 40px;
-        width: 40px;
-        }
-        top: 10px;
-        right: 10px;
-        position: absolute;
-    }
 
-    h1{
-        margin: 10px 0px;
-        border: none;
-    }
-    form{
-        padding: 20px;
-        max-width: 500px;
-        margin: 0px auto;
-        input, label{
-            display: block;
-            margin: 0px auto;
-        }
-        label{
-            text-align: left;
-            padding: 5px;
-            font-size: .9em;
-        }
-        input[type="email"], input[type="password"]{
-            border: none;
-            padding: 10px;
-            text-align: left;
-            width: 100%;
-            max-width: 400px;
-            margin: 0px;
-            margin-bottom: 20px;
-            background: #FFF;
-            border-bottom: 2px solid #595E55;
-            
-        }
-        button{
-            border: none;
-            color: #FFF;
-            background: #595E55;
-            padding: 5px 20px;
-            font-size: 1.2em;
-            border-radius: 5px;
-        }
-    }
-}
 
 
 
 
 
 .menu-button{
-    position: absolute;
+    position: fixed;
     z-index: 200;
     top: 10px;
     right: 10px;
+    background: #FFF;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    box-shadow: 0px 2px 5px 0px rgba(89, 94, 85, 0.411);
+
     cursor: pointer;
     svg{
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 }
 .logo{
@@ -242,11 +181,14 @@ main{
     padding-bottom: 0px;
     // background: #595E55;
     // border-radius: 5px;
-    img{
+    .image{
         width: 100%;
         display: block;
+        padding-bottom: 50%;
+        background-position: bottom center;
+        background-size: cover;
         // border-radius: 10px;
-        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.329), 0px 1px 15px 0px rgba(0, 0, 0, 0.185);
+        box-shadow: 0px 2px 5px 0px rgba(89, 94, 85, 0.411), 0px 1px 15px 0px rgba(89, 94, 85, 0.411);
         // transform: scale(.9);
         z-index: 500;
         position: relative;
@@ -265,7 +207,7 @@ main{
         padding: 15px;
         width: calc(100% - 20px);
         border-radius: 2px;
-        box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.144), 0px 1px 15px 0px rgba(0, 0, 0, 0.212);
+        box-shadow: 0px 2px 7px 0px rgba(89, 94, 85, 0.411);
         z-index: 600;
         position: relative;
         
@@ -304,28 +246,42 @@ main{
         }
     }
 }
+.table-cont{
+    display: inline-block;
+    background: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(89, 94, 85, 0.411), 0px 1px 15px 0px rgba(89, 94, 85, 0.301);
+}
 table{
     text-align: left;
     margin: 10px auto;
-    background: #FFF;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.144), 0px 1px 15px 0px rgba(0, 0, 0, 0.212);
-
+    border-collapse: collapse;
     td{
         text-align: left;
-        padding: 2px 10px;
+        padding: 5px 0px;
+        font-family: 'Merriweather', serif;
+    }
+    tr{
+        border-bottom: 1px solid #595E55;
+        margin: 5px;
     }
 }
-
+table tr td:first-child{
+    padding-right: 30px;
+}
 
 #map{
     height: 500px;
+    margin-bottom: -50px;
+    margin-top: 50px;
 }
 
 
 footer{
-    background: #595E55;
+    background: rgb(89,94,85);
+    background-image: linear-gradient(128deg, rgba(89,94,85,1) 0%, rgba(52,56,49,1) 100%);
+    background-image: url( '/images/noise2.png');
     color: #FFF;
     padding: 30px 10px;
     p{
@@ -353,19 +309,36 @@ footer{
 .attr-box{
     background: #FFF;
     width: calc(100% - 20px);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.144), 0px 1px 15px 0px rgba(0, 0, 0, 0.212);
+    box-shadow: 0px 2px 5px 0px rgba(89, 94, 85, 0.411), 0px 1px 15px 0px rgba(89, 94, 85, 0.301);
     max-width: 900px;
-    padding: 20px;
+    padding-top: 10px;
     margin: 10px auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
     img{
         max-width: 100%;
         margin: 0px auto;
+        // margin-bottom: 20px;
         // max-width: 900px;
         max-height: 400px;
         display: block;
         box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.329), 0px 1px 15px 0px rgba(0, 0, 0, 0.212);
 
     }
+    p{
+        padding: 10px;
+        margin: 0px;
+        
+        background: rgb(89,94,85);
+        background-image: linear-gradient(128deg, rgba(89,94,85,1) 0%, rgba(52,56,49,1) 100%);
+        background-image: url( '/images/noise2.png');
+        color: #eff0ea;
+    }
+    strong{
+        color: #FFF;
+    }
+    
 }
 
 /////jobs

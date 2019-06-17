@@ -19,8 +19,8 @@ html(lang="en")
                     for slide in slides
                         .swiper-slide
                             - var imgSrc = strapi + slide.picture.url;
-                            .border
-                            img(src=''+imgSrc+'', alt="" data-swiper-parallax-x="-300" data-swiper-parallax-duration="1000")
+                            
+                            .image(style='background-image: url('+imgSrc+')', alt="" data-swiper-parallax-x="-300" data-swiper-parallax-duration="1000")
                             p(data-swiper-parallax-x="-300" data-swiper-parallax-duration="1100") #{slide.description}
                     
             .about #{page.paragraph}
@@ -38,29 +38,31 @@ html(lang="en")
                 .hours
                     h1 Opening Sept 28!
                     p We look forward to seeing you!
-                    table
-                        tr
-                            td Monday
-                            td 9am - 6pm
-                        tr
-                            td Tuesday
-                            td 9am - 6pm
-                        tr
-                            td Wednesday
-                            td 9am - 6pm
-                        tr
-                            td Thursday
-                            td 9am - 6pm
-                        tr
-                            td Friday
-                            td 9am - 7pm
-                        tr
-                            td Saturday
-                            td 9am - 7pm
-                        tr
-                            td Sunday
-                            td 9am - 6pm
-                        tr
+
+                    .table-cont
+                        table
+                            tr
+                                td Monday
+                                td 9am - 6pm
+                            tr
+                                td Tuesday
+                                td 9am - 6pm
+                            tr
+                                td Wednesday
+                                td 9am - 6pm
+                            tr
+                                td Thursday
+                                td 9am - 6pm
+                            tr
+                                td Friday
+                                td 9am - 7pm
+                            tr
+                                td Saturday
+                                td 9am - 7pm
+                            tr
+                                td Sunday
+                                td 9am - 6pm
+                            
                     p Santa Teresa Blvd. At Bailey Ave. San Jose, CA 95141
                     h3 Questions?
                     p Contact us at 
