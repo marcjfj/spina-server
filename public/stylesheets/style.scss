@@ -76,7 +76,7 @@ body{
         font-size: 1.2em;
         // background: rgba(255, 255, 255, 0.048);
         text-align: left;
-        // border: 2px solid rgba(0, 0, 0, 0.075);
+        border-bottom: 1px solid rgba(61, 60, 45, 0.158);
         // border-left: 5px solid rgba(0, 0, 0, 0.185);
     }
     .close-button{
@@ -89,6 +89,12 @@ body{
             width: 44px;
             height: 44px;
         }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .menu{
+        width: 300px;
     }
 }
 
@@ -184,11 +190,11 @@ main{
     .image{
         width: 100%;
         display: block;
-        padding-bottom: 50%;
+        padding-bottom: 60%;
         background-position: bottom center;
         background-size: cover;
-        // border-radius: 10px;
-        box-shadow: 0px 2px 5px 0px rgba(89, 94, 85, 0.411), 0px 1px 15px 0px rgba(89, 94, 85, 0.411);
+        border-radius: 7px;
+        box-shadow: inset 0px 2px 5px 0px rgba(57, 59, 55, 0.747), inset 0px 1px 10px 0px rgba(55, 58, 53, 0.411);
         // transform: scale(.9);
         z-index: 500;
         position: relative;
@@ -224,6 +230,21 @@ main{
         margin-bottom: 10px;
     }
     
+}
+
+@media screen and (min-width: 700px){
+    .find{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .o-item{
+            text-align: left;
+        }
+    }
+    .offerings{
+        margin-right: 50px;
+    }
 }
 .offerings{
     margin-bottom: 25px;
