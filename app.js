@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var moment = require("moment-timezone");
 
 var indexRouter = require('./routes/index');
 var attractionsRouter = require('./routes/attractions');
@@ -29,7 +30,8 @@ app.use(compileSass({
   logToConsole: false // If true, will log to console.error on errors
 }));
 
-
+app.locals.moment = moment;
+app.locals.messageIsCurrent = function(date){ return ((moment(date.start) <= moment()) && (moment(date.end) >= moment()))}
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

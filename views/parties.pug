@@ -20,8 +20,23 @@ html(lang="en")
 
             a(href="/parties/packet") Download our party information packet
 
-            <iframe id="schedulista-widget-00" src="https://www.schedulista.com/schedule/spinafarmspumpkinpatch?mode=widget" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="900px"></iframe><script id="schedulista-widget-script-00" type="text/javascript" src="https://www.schedulista.com/schedule/spinafarmspumpkinpatch/widget.js"></script>
-            
+
+            form.party-form(action="https://formspree.io/charleen@spina-farms.com" method="POST")
+                h2 Request a date
+                p Please fill out this form and we will contact you to confirm your reservation.
+                label(for="name") Name
+                input(type="text" name="name" required)
+                label(for="email") Email
+                input(type="email", name="_replyto" required)
+                label(for="phone") Phone
+                input(type="tel", name="phone" required)
+                label(for="date") Requested date
+                input(type="date", name="date" required)
+                label(for="time") Requested time
+                input(type="time", name="time" required)
+                label(for="message") Message
+                textarea(name="message", cols="30", rows="10")
+                button(type="submit") Send
             
 
             

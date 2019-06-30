@@ -23,9 +23,10 @@ router.get('/', (req, res, next) => {
   Promise.all([
     get(strapi+'/slides'),
     get(strapi+'/pages/1'),
+    get(strapi+'/announcements'),
     
-  ]).then(([slides, page]) =>
-    res.render('index', { slides: slides, strapi: strapi, page: page})
+  ]).then(([slides, page, announcements]) =>
+    res.render('index', { slides: slides, strapi: strapi, page: page, announcements: announcements})
     )
     .catch(err => res.send('Oops, something has gone wrong'))
 })
