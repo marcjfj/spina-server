@@ -7,7 +7,7 @@ const fetch = require('node-fetch');
 // var thisIP = ip.address() // my ip address
 
 var thisIP = internalIp.v4.sync();
-var strapi = 'http://'+thisIP+':1337';
+var strapi = 'https://spinafarmspumpkinpatch.com/api';
 
 
 function get(url) {
