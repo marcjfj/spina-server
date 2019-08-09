@@ -39,5 +39,13 @@ router.get('/packet', function(req, res, next) {
     res.download('./public/parties.pdf', 'Welcome-Parties.pdf')
   
 });
+router.get('/res-form', function(req, res, next) {
+
+
+
+
+    res.download('./public/party-reservation.pdf', 'Party-Reservation.pdf')
+  
+});
 
 module.exports = router;
