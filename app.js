@@ -13,6 +13,7 @@ var contactRouter = require('./routes/contact');
 var fruitWoodRouter = require('./routes/fruit-wood');
 var partiesRouter = require('./routes/parties');
 var schoolsRouter = require('./routes/schools');
+var wholesaleRouter = require('./routes/wholesale');
 var usersRouter = require('./routes/users');
 var compileSass = require('express-compile-sass');
 var root = process.cwd();
@@ -49,6 +50,7 @@ app.use('/contact', contactRouter);
 app.use('/fruit-wood', fruitWoodRouter);
 app.use('/parties', partiesRouter);
 app.use('/schools', schoolsRouter);
+app.use('/wholesale', wholesaleRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
