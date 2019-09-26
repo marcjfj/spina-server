@@ -252,9 +252,54 @@ main{
     }
     
 }
+.new{
+    padding-top: 30px;
+}
+.new-attractions{
+    margin: 10px auto;
+    max-width: 900px;
+}
+.new-attr{
+    background:#FFF;
+    margin: 0 10px 10px 10px;
+    
+    max-width: 900px;
+    display: flex;
+    box-shadow: 0px 2px 7px 0px rgba(89, 94, 85, 0.411);
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+    h3, p{
+        text-align: left;
+    }
 
+    
+}
+.nt-desc{
+    flex-basis: 90%;
+    p{
+        display: none;
+    }
+}
+.na-image{
+    margin-right: 20px;
+    min-height: 120px;
+    min-width: 100px;
+    background-size: cover;
+    background-position: center;
+    flex-basis: 10%;
+}
 @media screen and (min-width: 700px){
-
+    .na-image{
+        flex-basis: 30%;
+        min-height: 200px;
+    }
+    .nt-desc{
+        flex-basis: 70%;
+        p{
+            display: block;
+        }
+    }
     .desk-nav{
         display: block;
     }
@@ -265,16 +310,34 @@ main{
 
         .o-item{
             text-align: left;
+            display: flex;
+            align-items: center;
+            span{
+                text-align: left;
+            }
+            svg{
+                display: block;
+            }
         }
     }
     .offerings{
         margin-right: 50px;
     }
 }
+
 .offerings{
     margin-bottom: 25px;
     .o-item{
         padding: 10px 20px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        span{
+            text-align: left;
+        }
+        svg{
+            display: block;
+        }
         svg{
             height: 30px;
             width: 30px;
@@ -289,6 +352,7 @@ main{
             font-weight: 700;
             color: #595E55;
             padding: 10px;
+            text-align: left;
         }
     }
 }

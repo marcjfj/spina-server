@@ -3,8 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var moment = require("moment-timezone");
+var moment = require('moment-timezone');
 
+var compileSass = require('express-compile-sass');
 var indexRouter = require('./routes/index');
 var attractionsRouter = require('./routes/attractions');
 var jobsRouter = require('./routes/jobs');
@@ -15,7 +16,7 @@ var partiesRouter = require('./routes/parties');
 var schoolsRouter = require('./routes/schools');
 var wholesaleRouter = require('./routes/wholesale');
 var usersRouter = require('./routes/users');
-var compileSass = require('express-compile-sass');
+
 var root = process.cwd();
 var app = express();
 
@@ -23,16 +24,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 // sass engine setup
-app.use(compileSass({
-  root: root,
-  sourceMap: true, // Includes Base64 encoded source maps in output css
-  sourceComments: true, // Includes source comments in output css
-  watchFiles: true, // Watches sass files and updates mtime on main files for each change
-  logToConsole: false // If true, will log to console.error on errors
-}));
+app.use(
+  compileSass({
+    root,
+    sourceMap: true, // Includes Base64 encoded source maps in output css
+    sourceComments: true, // Includes source comments in output css
+    watchFiles: true, // Watches sass files and updates mtime on main files for each change
+    logToConsole: true, // If true, will log to console.error on errors
+  })
+);
 
 app.locals.moment = moment;
-app.locals.messageIsCurrent = function(date){ return ((moment(date.start) <= moment()) && (moment(date.end) >= moment()))}
+app.locals.messageIsCurrent = function(date) {
+  return moment(date.start) <= moment() && moment(date.end) >= moment();
+};
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
