@@ -25,7 +25,6 @@ router.get('/', (req, res, next) => {
     .catch(err => res.send('Oops, something has gone wrong'));
 });
 
-/* GET home page. */
 router.get('/packet', function(req, res, next) {
   res.download('./public/parties.pdf', 'Welcome-Parties.pdf');
 });
