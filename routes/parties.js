@@ -26,10 +26,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/packet', function(req, res, next) {
-  res.download('./public/parties.pdf', 'Welcome-Parties.pdf');
+  res.download('./public/party-welcome-2020.pdf', 'Welcome-Parties.pdf');
 });
 router.get('/res-form', function(req, res, next) {
-  res.download('./public/party-reservation.pdf', 'Party-Reservation.pdf');
+  res.download('./public/party-reservation-2020.pdf', 'Party-Reservation.pdf');
 });
 
 module.exports = router;
